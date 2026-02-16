@@ -12,8 +12,8 @@ define('DB_PASS', 'kfldlkfd01k10kJ!');
 define('DB_PORT', 3306);
 
 
-// Ajuste este valor para o seu dominio/pasta em producao.
-define('BASE_URL', 'https://temartes.com/ChurrosFlow/public_html');
+// URL publica do app no servidor (respeite lowercase no Linux).
+define('BASE_URL', 'https://temartes.com/churrosflow');
 define('PDF_PUBLIC_PATH', '/pdf');
 
 define('ROOT_PATH', __DIR__);
