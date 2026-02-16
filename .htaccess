@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Se o arquivo/pasta existir na raiz, entrega direto.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Front-controller na raiz do projeto (proxy para /public_html/index.php)
+RewriteRule ^([^?]*)$ index.php?r=$1 [L,QSA]

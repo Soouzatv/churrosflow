@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Permite acesso direto a arquivos existentes
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Pretty URL opcional:
+# /auth/login -> index.php?r=auth/login
+RewriteRule ^([^?]*)$ index.php?r=$1 [L,QSA]
