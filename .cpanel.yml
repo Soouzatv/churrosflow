@@ -1,18 +1,7 @@
 ﻿---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/rona7402/public_html/churrosflow
+    - export DEPLOYPATH=/home1/rona7402/temartes.com/churrosflow/
     - /bin/mkdir -p "$DEPLOYPATH"
-    - /bin/mkdir -p "$DEPLOYPATH/public_html"
-    - /bin/cp -R public_html/. "$DEPLOYPATH/public_html/"
-    - /bin/cp index.php "$DEPLOYPATH/index.php"
-    - /bin/cp .htaccess "$DEPLOYPATH/.htaccess"
-    - /bin/mkdir -p "$DEPLOYPATH/public_html/storage/exports"
-    - /bin/mkdir -p "$DEPLOYPATH/public_html/storage/logos"
-    - /bin/mkdir -p "$DEPLOYPATH/public_html/pdf"
-    - /usr/bin/find "$DEPLOYPATH" -type d -exec chmod 755 {} \;
-    - /usr/bin/find "$DEPLOYPATH" -type f -exec chmod 644 {} \;
-    - /bin/chmod 755 "$DEPLOYPATH/public_html/storage"
-    - /bin/chmod 755 "$DEPLOYPATH/public_html/storage/exports"
-    - /bin/chmod 755 "$DEPLOYPATH/public_html/storage/logos"
-    - /bin/chmod 755 "$DEPLOYPATH/public_html/pdf"
+    - /bin/cp -a . "$DEPLOYPATH"
+    - /bin/rm -rf "$DEPLOYPATH/.git"
