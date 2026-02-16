@@ -1,9 +1,16 @@
-RewriteEngine On
+DirectoryIndex index.php index.html
+Options -Indexes
 
-# Se o arquivo/pasta existir na raiz, entrega direto.
+RewriteEngine On
+RewriteBase /churrosflow/
+
+# Se o arquivo/pasta existir, nao reescreve
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Front-controller na raiz do projeto (proxy para /public_html/index.php)
-RewriteRule ^([^?]*)$ index.php?r=$1 [L,QSA]
+# Rota raiz
+RewriteRule ^$ index.php [L,QSA]
+
+# Pretty URL -> querystring para o roteador
+RewriteRule ^(.+)$ index.php?r=$1 [L,QSA]
