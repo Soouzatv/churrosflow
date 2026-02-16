@@ -1,7 +1,7 @@
 ﻿---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/rona7402/temartes.com/churrosflow
+    - export DEPLOYPATH=/home1/rona7402/public_html/churrosflow
     - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/mkdir -p "$DEPLOYPATH/public_html"
     - /bin/cp -R public_html/. "$DEPLOYPATH/public_html/"
